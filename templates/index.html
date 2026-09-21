@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flores Amarillas</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <div class="background">
+
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+
+    </div>
+
+
+    <!-- Flores dibujadas con SVG -->
+    <div id="flowers-container"></div>
+
+
+    <!-- Pantalla inicial -->
+    <main class="container">
+
+        <section class="card" id="intro">
+
+            <div class="small-text">
+                PARA MELI
+            </div>
+
+            <h1>
+                Flores<br>
+                <span>Amarillas</span>
+            </h1>
+
+            <p class="intro">
+                Con mucho cariño para ti.
+            </p>
+
+            <button id="startButton">
+                <span>Abrir</span>
+                <span class="heart">♡</span>
+            </button>
+
+        </section>
+
+
+        <!-- Mensaje después de abrir -->
+        <div id="message" class="message hidden">
+
+            <p>
+                Un pequeño detalle<br>
+                Espero que te guste :)
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <div id="particles"></div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
+
