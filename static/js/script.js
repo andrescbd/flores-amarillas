@@ -637,49 +637,49 @@ function createScatteredFlowers() {
 
     const positions = [
 
-        {
-            x: 12,
-            y: 20,
-            scale: 0.42,
-            rotation: -20
-        },
+    {
+        x: 12,
+        y: 20,
+        scale: 0.22,
+        rotation: -20
+    },
 
-        {
-            x: 87,
-            y: 18,
-            scale: 0.38,
-            rotation: 15
-        },
+    {
+        x: 87,
+        y: 18,
+        scale: 0.20,
+        rotation: 15
+    },
 
-        {
-            x: 8,
-            y: 55,
-            scale: 0.35,
-            rotation: 25
-        },
+    {
+        x: 8,
+        y: 55,
+        scale: 0.18,
+        rotation: 25
+    },
 
-        {
-            x: 92,
-            y: 55,
-            scale: 0.42,
-            rotation: -15
-        },
+    {
+        x: 92,
+        y: 55,
+        scale: 0.22,
+        rotation: -15
+    },
 
-        {
-            x: 20,
-            y: 80,
-            scale: 0.3,
-            rotation: -10
-        },
+    {
+        x: 20,
+        y: 80,
+        scale: 0.16,
+        rotation: -10
+    },
 
-        {
-            x: 80,
-            y: 82,
-            scale: 0.35,
-            rotation: 18
-        }
+    {
+        x: 80,
+        y: 82,
+        scale: 0.18,
+        rotation: 18
+    }
 
-    ];
+];
 
 
     positions.forEach((flower, index) => {
@@ -699,12 +699,15 @@ function createScatteredFlowers() {
             element.style.top =
                 `${flower.y}%`;
 
-            element.style.transform =
-                `
-                    translate(-50%, -50%)
-                    rotate(${flower.rotation}deg)
-                    scale(${flower.scale})
-                `;
+            element.style.setProperty(
+                "--flower-scale",
+                flower.scale
+            );
+
+            element.style.setProperty(
+                "--flower-rotation",
+                `${flower.rotation}deg`
+            );
 
 
             element.innerHTML =

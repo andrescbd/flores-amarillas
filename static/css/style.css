@@ -785,30 +785,34 @@ button:disabled {
 ========================================= */
 
 .scattered-flower {
-    position: fixed;
+    position: absolute;
 
-    width: 115px;
-    height: 115px;
+    width: 150px;
+    height: 150px;
 
     opacity: 0;
 
     transform:
         translate(-50%, -50%)
+        rotate(var(--flower-rotation))
         scale(0);
 
+    transform-origin: center center;
+
     animation:
-        scatteredAppear 1.2s
+        scatteredFlowerAppear 1s
         cubic-bezier(0.2, 0.8, 0.2, 1)
         forwards;
 }
 
-@keyframes scatteredAppear {
+@keyframes scatteredFlowerAppear {
 
     0% {
         opacity: 0;
 
         transform:
             translate(-50%, -50%)
+            rotate(var(--flower-rotation))
             scale(0);
     }
 
@@ -817,15 +821,17 @@ button:disabled {
 
         transform:
             translate(-50%, -50%)
-            scale(1.08);
+            rotate(var(--flower-rotation))
+            scale(calc(var(--flower-scale) * 1.1));
     }
 
     100% {
-        opacity: 0.9;
+        opacity: 1;
 
         transform:
             translate(-50%, -50%)
-            scale(1);
+            rotate(var(--flower-rotation))
+            scale(var(--flower-scale));
     }
 }
 
@@ -973,25 +979,9 @@ button:disabled {
     }
 
     .bouquet {
-        width: 390px;
-        height: 490px;
-
         transform:
             translate(-50%, -42%)
-            scale(0.72);
-    }
-
-    .bouquet-flower {
-        width: 150px;
-        height: 150px;
-    }
-
-    .bouquet-ribbon {
-        top: 76%;
-    }
-
-    .scattered-flower {
-        transform-origin: center;
+            scale(0.68);
     }
 
     .message {
@@ -1005,7 +995,7 @@ button:disabled {
     .bouquet {
         transform:
             translate(-50%, -42%)
-            scale(0.62);
+            scale(0.58);
     }
 
     .card {
